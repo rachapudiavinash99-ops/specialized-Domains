@@ -7,6 +7,9 @@ from sqlalchemy import pool
 from alembic import context
 from app.db.session import Base
 from app.models.user import User
+from app.models.academic import Department, Course, ClassGroup, Section, Subject
+from app.models.profiles import Teacher, Parent, Student, TeacherAssignment
+from app.models.attendance import AttendanceSession, Attendance, AttendanceCorrection
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
