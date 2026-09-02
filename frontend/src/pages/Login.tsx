@@ -18,9 +18,12 @@ export default function Login() {
     setLoading(true);
 
     try {
+      const cleanEmail = email.trim();
+      const cleanPassword = password.trim();
+      
       const formData = new URLSearchParams();
-      formData.append('username', email); // OAuth2 expects username
-      formData.append('password', password);
+      formData.append('username', cleanEmail);
+      formData.append('password', cleanPassword);
 
       const response = await api.post('/auth/login', formData, {
         headers: {
