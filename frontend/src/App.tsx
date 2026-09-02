@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import MarkAttendance from './pages/MarkAttendance';
+import Reports from './pages/Reports';
 import Layout from './layouts/MainLayout';
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
             <Route index element={<Dashboard />} />
             <Route path="attendance" element={<MarkAttendance />} />
+            <Route path="reports" element={<Reports />} />
           </Route>
         </Routes>
       </Router>
