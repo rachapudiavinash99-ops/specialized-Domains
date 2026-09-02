@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import MarkAttendance from './pages/MarkAttendance';
 import Layout from './layouts/MainLayout';
 
 function PrivateRoute({ children }: { children: JSX.Element }) {
@@ -17,7 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
             <Route index element={<Dashboard />} />
-            {/* Additional routes will be added here */}
+            <Route path="attendance" element={<MarkAttendance />} />
           </Route>
         </Routes>
       </Router>
